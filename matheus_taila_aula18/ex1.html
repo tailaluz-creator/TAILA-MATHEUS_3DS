@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A tranca básica</title>
+    <script>
+        class Termometro {
+    #temperatura;
+
+  constructor(valorInicial) {
+    this.#temperatura = valorInicial;
+  }
+
+  get temperatura() {
+    return this.#temperatura;
+  }
+
+  set temperatura(valor) {
+    if (typeof valor === "number") {
+      this.#temperatura = valor;
+    }
+  }
+}
+const t = new Termometro(25);
+
+console.log(t.temperatura);
+
+t.temperatura =38;
+console.log(t.temperatura); 
+
+t.temperatura = "quente"; 
+console.log(t.temperatura); 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

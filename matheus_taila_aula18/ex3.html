@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escondendo segredos</title>
+    <script>
+        class Usuario {
+  #email;
+  #senha;
+
+  constructor(email, senha) {
+    this.#email = email;
+    this.#senha = senha;
+  }
+
+  get email() {
+    return this.#email;
+  }
+
+  verificarSenha  (palpite) {
+    return palpite === this.#senha;
+  }
+}
+
+const usuario = new Usuario("usuario@email.com", "Novasenha");
+
+console.log(usuario.email);
+
+console.log(usuario.verificarSenha("Novasenha"));
+
+console.log(usuario.senha);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

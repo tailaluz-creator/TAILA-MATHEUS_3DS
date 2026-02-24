@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O cofre inteligente</title>
+    <script>
+        class Cofre {
+    #saldo;
+    #historico = [];
+
+  constructor(valorInicial) {
+    this.#saldo = valorInicial;
+    this.#historico.push(`Saldo inicial: ${valorInicial}`);
+  }
+
+  get saldo() {
+    return this.#saldo;
+  }
+
+  set saldo(novoValor) {
+    if (typeof novoValor === "number") {
+      this.#saldo = novoValor;
+      this.#historico.push(`Saldo alterado para ${novoValor}`);
+    }
+  }
+
+  extrato() {
+    this.#historico.forEach(m => console.log(m));
+  }
+}
+
+const cofre = new Cofre(100);
+
+cofre.saldo = 150;
+cofre.saldo = 400;
+
+cofre.extrato();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

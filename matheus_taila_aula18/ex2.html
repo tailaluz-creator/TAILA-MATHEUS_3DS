@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O filtro de valores</title>
+    <script>
+        class ControleDeEstoque {
+  #quantidade;
+
+  constructor(valorInicial) {
+    this.#quantidade = valorInicial;
+  }
+
+  get quantidade() {
+    return this.#quantidade;
+  }
+
+
+  
+  set quantidade(valor) {
+    if (typeof valor === "number" && valor >= 0) {
+      this.#quantidade = valor;
+    } else {
+      console.log("Erro");
+    }
+  }
+}
+
+const estoque = new ControleDeEstoque(10);
+
+console.log(estoque.quantidade);
+
+estoque.quantidade = -5;
+
+console.log(estoque.quantidade);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

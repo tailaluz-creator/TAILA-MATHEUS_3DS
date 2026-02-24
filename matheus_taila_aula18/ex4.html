@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O dado processado</title>
+    <script>
+        class PerfilDigital {
+  #nomeCompleto;
+
+  constructor(nome) {
+    this.nomeCompleto = nome;
+  }
+
+  set nomeCompleto(valor) {
+    this.#nomeCompleto = valor.toUpperCase();
+  }
+
+  get nomeCompleto() {
+    return this.#nomeCompleto.split(" ")[0];
+  }
+}
+
+const perfil = new PerfilDigital("Nicolas Wippel dos Santos");
+
+console.log(perfil.nomeCompleto);   
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
